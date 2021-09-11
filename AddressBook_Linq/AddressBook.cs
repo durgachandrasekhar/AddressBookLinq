@@ -97,5 +97,13 @@ namespace AddressBook_LINQ
             else
                 Console.WriteLine("City or State is Not in the List");
         }
+        //Get count By City or State
+        public void GetSizeByCityOrState(DataTable table)
+        {
+            var contacts = table.Rows.Cast<DataRow>().GroupBy(x => x["State"].Equals("GUJ")
+            || x["City"].Equals("Maharashtra")).Count();
+
+            Console.WriteLine("Size : {0} ", contacts);
+        }
     }
 }
