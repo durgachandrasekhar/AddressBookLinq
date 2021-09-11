@@ -105,5 +105,13 @@ namespace AddressBook_LINQ
 
             Console.WriteLine("Size : {0} ", contacts);
         }
+
+        //Sort Alphabetically
+        public void SortContacts(DataTable table)
+        {
+            var contacts = table.Rows.Cast<DataRow>()
+                           .OrderBy(x => x.Field<string>("FirstName"));
+            DisplayContacts(contacts.CopyToDataTable());
+        }
     }
 }

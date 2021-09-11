@@ -15,11 +15,12 @@ namespace AddressBook_LINQ
             AddressBookTable addressBookTable = new AddressBookTable();
 
             DataTable dataTable = addressBookTable.AddAddressBookDataTable();
-            //addressBookTable.EditContact(dataTable);
-            //addressBookTable.DeleteContact(dataTable);
-            //addressBookTable.DisplayContacts(dataTable);
-            //addressBookTable.RetrieveContactByCityOrState(dataTable);
+            addressBookTable.EditContact(dataTable);
+            addressBookTable.DeleteContact(dataTable);
+            addressBookTable.DisplayContacts(dataTable);
+            addressBookTable.RetrieveContactByCityOrState(dataTable);
             addressBookTable.GetSizeByCityOrState(dataTable);
+            addressBookTable.SortContacts(dataTable);
         }
     }
 }
