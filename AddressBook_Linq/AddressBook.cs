@@ -44,5 +44,19 @@ namespace AddressBook_LINQ
                 Console.WriteLine();
             }
         }
+        //Edit Contact using Name
+        public void EditContact(DataTable table)
+        {
+            var contacts = table.AsEnumerable().Where(x => x.Field<string>("FirstName") == "Rahul");
+            foreach (var contact in contacts)
+            {
+                contact.SetField("LastName", "Lokesh");
+                contact.SetField("City", "Mumbai");
+                contact.SetField("State", "Maharashtra");
+            }
+
+            Console.WriteLine("The Contact is updated succesfully\n");
+            DisplayContacts(contacts.CopyToDataTable());
+        }
     }
 }
