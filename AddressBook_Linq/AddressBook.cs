@@ -116,5 +116,18 @@ namespace AddressBook_LINQ
                            .OrderBy(x => x.Field<string>("FirstName"));
             DisplayContacts(contacts.CopyToDataTable());
         }
+        //Get Number of Contact Person, COunt By Type
+        public void GetCountByType(DataTable table)
+        {
+            var friendsContacts = table.Rows.Cast<DataRow>()
+                                         .Where(x => x["AddressBookType"].Equals("Friend")).Count();
+            Console.WriteLine("'Friend' : {0} ", friendsContacts);
+            var familyContact = table.Rows.Cast<DataRow>()
+                             .Where(x => x["AddressBookType"].Equals("Family")).Count();
+            Console.WriteLine("'Family' : {0} ", familyContact);
+            var ProfessionalContact = table.Rows.Cast<DataRow>()
+                             .Where(x => x["AddressBookType"].Equals("Profession")).Count();
+            Console.WriteLine("'Profession' : {0} ", ProfessionalContact);
+        }
     }
 }

@@ -21,6 +21,8 @@ namespace AddressBook_LINQ
             addressBookTable.RetrieveContactByCityOrState(dataTable);
             addressBookTable.GetSizeByCityOrState(dataTable);
             addressBookTable.SortContacts(dataTable);
+
+            addressBookTable.GetCountByType(dataTable);
         }
     }
 }
