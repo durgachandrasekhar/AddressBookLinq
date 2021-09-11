@@ -14,6 +14,9 @@ namespace AddressBook_LINQ
             DataTable table = new DataTable();
 
             //Add Columns
+            table.Columns.Add("AddressBookName", typeof(string));
+            table.Columns.Add("AddressBookType", typeof(string));
+
             table.Columns.Add("FirstName", typeof(string));
             table.Columns.Add("LastName", typeof(string));
             table.Columns.Add("Address", typeof(string));
@@ -24,11 +27,11 @@ namespace AddressBook_LINQ
             table.Columns.Add("Email", typeof(string));
 
             //Values Assign to Rows
-            table.Rows.Add("Rahul", "Sharma", "DL", "DL", "DL", 100001, 997325546, "rahul@gmail.com");
-            table.Rows.Add("Dhawan", "Shikhar", "PUN", "PUN", "PUN", 200002, 999000880, "dhawan@gmail.com");
-            table.Rows.Add("Virat", "Kohli", "Panji", "Panaji", "Goa", 300003, 7777743210, "virat@gmail.com");
-            table.Rows.Add("Ravi", "Jadeja", "GUJ", "GUJ", "GUJ", 400004, 7877743990, "ravi@gmail.com");
-            table.Rows.Add("Jasprit", "Bumrah", "HAR", "HAR", "HAR", 500005, 7888743210, "bumbum@gmail.com");
+            table.Rows.Add("AB1", "Friend", "Rahul", "Sharma", "DL", "DL", "DL", 100001, 997325546, "rahul@gmail.com");
+            table.Rows.Add("AB2", "Friend", "Dhawan", "Shikhar", "PUN", "PUN", "PUN", 200002, 999000880, "dhawan@gmail.com");
+            table.Rows.Add("AB3", "Family", "Virat", "Kohli", "Panji", "Panaji", "Goa", 300003, 7777743210, "virat@gmail.com");
+            table.Rows.Add("AB4", "Family", "Ravi", "Jadeja", "GUJ", "GUJ", "GUJ", 400004, 7877743990, "ravi@gmail.com");
+            table.Rows.Add("AB5", "Profession", "Jasprit", "Bumrah", "HAR", "HAR", "HAR", 500005, 7888743210, "bumbum@gmail.com");
 
             return table;
         }
